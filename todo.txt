@@ -1,0 +1,7 @@
+1)	Renew domain
+2)	Icons need to be pulled using GROUPNAME.png (e.g. "teentitans2003") cdata from Poliwag.xml but referred to user by GROUPDESC (e.g. "Teen Titans").
+3)	Search box combo box needs to be populated with GROUPDESC.
+4)	Icon carousel needs to be populated with links to GROUPDESC
+5)	Site to become compliant (gradients especially with IE)
+6)	Fix whatever is attaching the Sort feature linking to the field it represents.
+7)	get rid of the gaybow greg

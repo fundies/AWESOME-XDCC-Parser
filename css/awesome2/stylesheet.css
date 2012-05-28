@@ -1,0 +1,159 @@
+html, body { 
+ height:100%;
+ margin:0; 
+ padding:0; 
+ text-align:center; 
+ background: -moz-linear-gradient(top,  #00BFFF,  #FFFFFF); 
+ background: -webkit-gradient(linear, left top, left bottom, from(#00BFFF), to(#FFFFFF));
+ background-repeat: no-repeat;
+ background-attachment:fixed;
+ font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+ font-size:1em;
+ color:#000000;
+}
+
+#newcarousel {
+ background-color:#ffffff;  
+ height:50px; 
+ width:100%;
+ position: relative; 
+ border-top:2px solid #000000;
+ border-bottom:3px solid #000000;
+ border-left:3px solid #000000;
+ border-right:3px solid #000000;
+ display:block;
+ margin-left:auto; 
+ margin-right:auto;
+ clear:both;
+}
+
+a:link, a:visited, a:active {
+ color:#000000;
+ text-decoration:none;
+}
+
+a:hover {
+ color:#ffffff;
+ text-decoration:none;
+}
+table {
+ border-collapse: collapse;
+}
+
+table.center {
+ margin-left:auto; 
+ margin-right:auto;
+}
+
+img.stretchimg {
+ margin-left:auto; 
+ margin-right:auto; 
+ display: inline;
+ float: left;
+ width:100%;
+ border-left:3px solid #000000;
+ border-right:3px solid #000000;
+}
+
+th {
+ background-color: #FFFFFF;
+ vertical-align:text-bottom;
+ font-size:0.8em;
+}
+
+th#left {
+ border-radius: 1em 0 0 0;
+ background-color:#FFFFFF;
+ vertical-align:text-bottom;
+ font-size:0.8em;
+}
+
+th#PACKNR {
+ text-align: right;
+ padding-right:0.5em;
+}
+
+th#PACKNAME {
+ text-align: left;
+ padding-left:0.5em;
+}
+
+th#PACKSIZE {
+ text-align: right;
+}
+
+th#PACKGETS {
+ text-align: right;
+}
+
+th#CRC32 {
+ text-align: right;
+}
+
+th#ADDDATE {
+ border-radius: 0 1em 0 0;
+ text-align: right;
+ padding-right:1em;
+}
+
+td { font-size:0.7em; }
+td.icons {
+ text-align: left;
+ vertical-align:middle;
+ width: 6.25em; 
+}
+
+td.icons img {
+ display:block;
+}
+
+td.PACKNUM {
+ text-align: right;
+ padding-right:0.5em;
+ font-size:0.7em;
+ width: 4em;
+ font-weight:bold;
+ border-right: 1px dotted rgba(0, 0, 0, 0.3);
+}
+
+td.PACKNAME {
+ text-align: left;
+ padding-left:0.5em;
+ width: 95.5em; 
+}
+
+td.PACKSIZE {
+ text-align: right;
+ width: 4em; 
+}
+
+td.PACKGETS {
+ text-align: right;
+ width: 4em; 
+}
+
+td.CRC32 {
+ text-align: right;
+ font-size:1em;
+ font-family:"Courier New", Courier, monospace;
+ width: 7em; 
+}
+
+td.ADDDATE {
+ text-align: right;
+ padding-right:0.5em;
+ width: 9.25em; 
+}
+
+p {
+ padding:0px;
+ margin:0px;
+}
+
+p.footer {
+ font-size:0.6em;
+}
+
+p.searchtext {
+ font-size:0.8em;
+}
