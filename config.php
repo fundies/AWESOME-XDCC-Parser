@@ -7,6 +7,7 @@ $rainbow = array('row1','row2');
 $colum = 0;
 
 //Default Parameters
+$title = '#Awesome-Toons -- irc.rizon.net';
 $theme = 'awesome';
 $start = 0; //row to start with (0 = first
 $num = 20; //number of rows to show
@@ -26,5 +27,5 @@ $dialup = array(
   "carousel" => false,
   "search" => false
 );
-
+//print_r $awesome;
 ?>

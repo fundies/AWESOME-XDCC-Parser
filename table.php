@@ -45,8 +45,9 @@ function showTable() { showTableHeader(); showTableRows(); showPrevNext(); }
 //set up table header
 function showTableHeader() {
  global $showCols, $colum, $sortBy, $sortDesc, $colnames, $filter, $search;
- echo '<table class="center" border="0">';
- echo " <tr>\n<th id=\"left\"></th>";
+ echo "  <table class='center' border='0'>";
+ echo "\n         <tr>";
+ echo "\n           <th id='left'></th>\n";
  foreach ($showCols as $col) {
   $col = htmlspecialchars($col);
   $phpargs = "sort=$col";
@@ -55,13 +56,13 @@ function showTableHeader() {
     $phpargs .= '&amp;filter=' . urlencode($filter);
   if (!empty($_REQUEST['search']))
     $phpargs .= '&amp;search=' . urlencode($search);
-  echo "  <th id=\"$col\"><a href=\"index.php?" . $phpargs . '" onclick="return jqSort==undefined?true:jqSort(\'' . $phpargs . '\');">'
+  echo "           <th id=\"$col\"><a href=\"index.php?" . $phpargs . '" onclick="return jqSort==undefined?true:jqSort(\'' . $phpargs . '\');">'
      . ucwords($colnames[$colum]) ;
   if ($sortBy == $col) echo $sortDesc ? " <img alt=\"up\" src=\"img/sorter.png\" />" : " <img alt=\"down\" src=\"img/sorter2.png\" />";
   echo "</a></th>\n";
   $colum++;
  }
- echo " </tr>\n";
+ echo "         </tr>\n";
 }
 
 //display sorted rows
@@ -77,17 +78,17 @@ function showTableRows() {
   if ($countcolour > sizeof($rainbow)-1) $countcolour = 0;
   
   $r = $rows[$ind];
-  echo "\n<tr onclick=\"prompt('Paste this into your IRC client:','/msg A-T|Poliwag xdcc send $r->rid');\" class='$rainbow[$countcolour]'>";
+  echo "\n         <tr onclick=\"prompt('Paste this into your IRC client:','/msg A-T|Poliwag xdcc send $r->rid');\" class='$rainbow[$countcolour]'>";
 
- echo "\n  <td class=\"icons\"><img class=\"img\" alt=\"$r->rgroup\" src=\"icons/$r->rgroup.png\" /></td>\n";
+ echo "\n           <td class=\"icons\"><img class=\"img\" alt=\"$r->rgroup\" src=\"icons/$r->rgroup.png\" /></td>\n";
  foreach ($showCols as $col) {
-  echo '  <td class="' . $col . '">';
+  echo '           <td class="' . $col . '">';
   if ($col == 'ADDDATE') echo date("Y-m-d H:i:s",$r->rdate);
-  else if ($col == 'PACKNAME') echo "<a onclick='return false;' href=\"command.php?pack=\">$r->rname</a>";
+  else if ($col == 'PACKNAME') echo "<a onclick='return false;' rel='external' href=\"command.php?pack=$r->rid\">" . htmlspecialchars($r->rname) . "</a>";
   else echo $r->getField($col);
   echo "</td>\n";
  }
-echo "</tr>\n";
+echo "         </tr>\n";
 
   $countcolour++;
  }
@@ -100,24 +101,23 @@ function showPrevNext() {
  global $rows, $start, $num, $num, $sortBy, $filter, $search;
  $beg = max(0,min(count($rows),$start));
  $end = max(0,min(count($rows),$num + $start));
- echo "</table>\n";
- echo '<p class="searchtext">Showing results ' . ($beg+1) . " to $end of " . count($rows) . ".</p>";
- echo '<p class="searchtext">';
+ echo "       </table>\n\n";
+ echo '       <p class="searchtext">Showing results ' . ($beg+1) . " to $end of " . count($rows) . ".</p>\n";
+ echo "       <p class='searchtext'>";
  $sortInfo = '';
- if (isset($_REQUEST['num'])) $sortInfo .= '&num=' . $num;
- if (isset($_REQUEST['sort'])) $sortInfo .= '&sort=' . $sortBy;
- if (isset($_REQUEST['desc'])) $sortInfo .= '&desc';
- if (isset($_REQUEST['filter'])) $sortInfo .= '&filter=' . urlencode($filter);
- if (isset($_REQUEST['search'])) $sortInfo .= '&search=' . urlencode($search);
+ if (isset($_REQUEST['num'])) $sortInfo .= '&amp;num=' . $num;
+ if (isset($_REQUEST['sort'])) $sortInfo .= '&amp;sort=' . $sortBy;
+ if (isset($_REQUEST['desc'])) $sortInfo .= '&amp;desc';
+ if (isset($_REQUEST['filter'])) $sortInfo .= '&amp;filter=' . urlencode($filter);
+ if (isset($_REQUEST['search'])) $sortInfo .= '&amp;search=' . urlencode($search);
  if ($start > 0) {
   echo "<a href=\"index.php?start=" . ($start - $num) . $sortInfo;
   echo "\" onclick=\"return jqSort==undefined?true:jqPrev('" . ($start + $num) . $sortInfo . "')\">Previous $num</a>  \n";
  }
  if ($start + $num < count($rows)) {
   echo "<a href=\"index.php?start=" . ($start + $num) . $sortInfo;
-  echo "\" onclick=\"return jqSort==undefined?true:jqNext('" . ($start + $num) . $sortInfo . "')\">Next $num</a>\n";
+  echo "\" onclick=\"return jqSort==undefined?true:jqNext('" . ($start + $num) . $sortInfo . "')\">Next $num</a></p>\n";
  }
- echo '</p>';
 }
 
 //sort callback function
