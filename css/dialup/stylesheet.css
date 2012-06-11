@@ -1,0 +1,215 @@
+html {
+ font: 12pt "Trebuchet MS";
+ background-color: #e1e1e1;
+ color: #1a2025;
+}
+h1 {
+ text-align: left;
+ margin-left: 5%; 
+}
+.row1 {
+ background-color: #e1e1e1;
+ color: black;
+}
+.row2 {
+ background-color: #bcbdbd;
+ color: black;
+}
+a:link, a:visited, a:active {
+ color: #000000;
+ text-decoration:none;
+}
+
+#stats {
+ margin-top: 20px;
+}
+
+.packlist tr:hover td {
+ background-color: #71808c;
+ cursor: pointer;
+}
+
+th {
+ border-bottom: 1px solid #000000;
+}
+
+#pulldown {
+ width: 70%;
+ margin-top: 5px;
+ margin-bottom: 20px;
+ margin-left: 1px;
+ border-top:1px solid #000000;
+ display: table-cell;
+ vertical-align: middle;
+}
+#searchinput {
+ margin-bottom: 20px;
+ margin-top: 5px;
+ border-left:1px solid #000000;
+ border-bottom:1px solid #000000;
+ display: table-cell;
+ vertical-align: middle;
+}
+#newpagewidth { 
+ height:100%;
+ width:95%; 
+ text-align:center; 
+ margin-left:auto; 
+ margin-right:auto;
+} 
+ 
+#newheader {
+ border: 1px solid black;
+ position:relative; 
+ width:100%;
+ background: transparent;  
+ text-align:center;
+ display:block;
+ margin-left:auto; 
+ margin-right:auto;
+} 
+
+#newsearch {
+ width:100%;
+ margin-left:auto; 
+ margin-right:auto;
+ position: relative;
+ padding-top: 20px;
+ padding-bottom: 20px;
+ clear:both;
+}
+
+#ajaxsearch {
+ width:100%;  
+ clear:both;
+ position: relative;
+}
+
+#outerbox {
+ position:relative;   /* to place it somewhere on the screen */
+ top:0px;            /* free space at top */
+ bottom:0px;
+ width:100%;  
+}         /* makes it lock to the bottom */
+
+#innerbox {
+ margin-left:auto; 
+ margin-right:auto;
+ padding-top:30px;
+ width:100%;
+ position:absolute;				
+ min-height:100%; /* !important browser fill */
+ height:auto;
+}        /*content fill */
+
+#innerbox p {
+ font-size:0.8em;
+}
+
+table {
+ width: 100%;
+ border-collapse: collapse;
+ margin-bottom: 3px;
+ border-bottom: 1px solid #000000;
+}
+
+table.packlist {
+ margin-left:auto; 
+ margin-right:auto;
+}
+
+th {
+ font: 14pt "Trebuchet MS";
+ color: #324d62;
+ font-weight:bold;
+ vertical-align:text-bottom;
+}
+
+th#left {
+ vertical-align:text-bottom;
+}
+
+th#PACKNR {
+ text-align: center;
+ padding-right:0.5em;
+}
+
+th#PACKNAME {
+ text-align: left;
+ padding-left:0.5em;
+}
+
+th#PACKSIZE {
+ text-align: right;
+}
+
+th#PACKGETS {
+ text-align: right;
+}
+
+th#CRC32 {
+ text-align: right;
+}
+
+th#ADDDATE {
+ text-align: right;
+ padding-right:1em;
+}
+
+td {
+ font-size:0.85em;
+}
+
+td.PACKNUM {
+ text-align: right;
+ padding-right:0.5em;
+ font-size:0.7em;
+ width: 5%;
+ font-weight:bold;
+ border-right: 1px dotted rgba(0, 0, 0, 0.3);
+}
+
+td.PACKNAME {
+ text-align: left;
+ padding-left:0.5em;
+ width: 53%; 
+}
+
+td.PACKSIZE {
+ text-align: right;
+ width: 5%; 
+}
+
+td.PACKGETS {
+ text-align: right;
+ width: 5%; 
+}
+
+td.CRC32 {
+ text-align: right;
+ font-size:1em;
+ font-family:"Courier New", Courier, monospace;
+ width: 10%; 
+}
+
+td.ADDDATE {
+ text-align: right;
+ padding-right:0.5em;
+ width: 10%; 
+}
+
+p {
+ padding:0px;
+ margin:0px;
+}
+
+p.footer {
+ font-size:0.6em;
+}
+
+div.searchtext {
+ font-size:0.8em;
+ width: 100%;
+ height: 48px;
+ display:table;
+}
