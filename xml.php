@@ -2,7 +2,7 @@
 // Class Definitions //
 
 class Row {
- public $rid, $rgets, $rdate, $rcrc, $rsize, $rgroup;
+ public $rid, $rgets, $rdate, $rcrc, $rsize, $rgroup, $rtransfered;
  public $rname, $rfilter;
 
  function setField($field,$val) {
@@ -115,4 +115,10 @@ class Parser {
   }
  }
 }
-?>
+$transfered = simplexml_load_file("$xmlfile")->sysinfo->quota->transferedtotal;
+$offered = simplexml_load_file("$xmlfile")->sysinfo->quota->diskspace;
+$slotsfree = simplexml_load_file("$xmlfile")->sysinfo->slots->slotsfree;
+$slotsmax = simplexml_load_file("$xmlfile")->sysinfo->slots->slotsmax;
+$uptime = simplexml_load_file("$xmlfile")->sysinfo->stats->uptime;
+$version = simplexml_load_file("$xmlfile")->sysinfo->stats->version;
+$nick = simplexml_load_file("$xmlfile")->sysinfo->network->confignick;

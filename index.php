@@ -12,10 +12,10 @@
   <?php 
     echo "<title>$title</title>\n"; 
     echo "  <link rel='stylesheet' href=\"css/$theme/stylesheet.css\" type='text/css' />\n";
+    echo "  <script type='text/javascript' src='http://cdn.jquerytools.org/1.2.6/full/jquery.tools.min.js'></script>\n";
     if (${$theme}["carousel"]) echo "  <script type='text/javascript' src='js/carousel.js'></script>\n";
   ?>
   <script type='text/javascript' src='js/search.js'></script>
-  <script type='text/javascript' src='http://cdn.jquerytools.org/1.2.6/full/jquery.tools.min.js'></script>
   <meta http-equiv='Content-Style-Type' content='text/css' />
   <meta http-equiv='Content-Type' content='text/html;charset=utf-8' />
   <link rel='icon' type='image/png' href='img/favicon.png' />
@@ -26,7 +26,7 @@
   echo "\n  <div id='newpagewidth'>\n";
     include('xml.php');
     $parser = new Parser($xmlfile);
-    include('header.php');
+    if (!empty(${$theme}['header'])) include('header.php');
     if (${$theme}['carousel']) include('carousel.php');
     include('search.php');
     include('footer.php');

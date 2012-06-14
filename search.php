@@ -1,8 +1,10 @@
-
+    <?php
+	if (${$theme}['botname']) echo "<h1>$nick</h1>\n";
+    ?>
     <div id='newsearch'>
       <form action='index.php' id='searchform'>
-        <p class='searchtext'>Show : 
-          <select name='filter' id='searchfilter'>
+        <div class='searchtext'><div id='pulldown'>Show : 
+          <select name='filter' id='searchfilter' onchange='doAjax()'>
             <option value="">All</option>
             <?php
               require_once('table.php');
@@ -12,10 +14,18 @@
                 echo '>' . htmlspecialchars($f->desc) . "</option>\n";
               } 
            ?>
-           </select> (and/or) Search: 
-           <input type='text' name='search' id='searchtext'/>
-           <input type='submit' value='Go' />
-         </p>
+           </select></div>
+           <script type="text/javascript">
+             var delayTimer = null;
+             function delayAjax() {
+               if (delayTimer) clearTimeout(delayTimer);
+               delayTimer = setTimeout("doAjax()", 500);
+             }
+           </script>
+           <div id='searchinput'> (and/or) Search: 
+           <input type='text' name='search' id='searchtext' onkeypress='delayAjax()' />
+           <input type='submit' value='Go' /></div>
+         </div>
        </form>
      </div>
 
@@ -23,5 +33,6 @@
      <?php
        require_once('table.php');
        showTable();
+       showinfo();
      ?>
      </div>
